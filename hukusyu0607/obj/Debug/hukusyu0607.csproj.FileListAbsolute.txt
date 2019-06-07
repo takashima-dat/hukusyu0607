@@ -1,0 +1,9 @@
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\bin\Debug\hukusyu0607.exe.config
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\bin\Debug\hukusyu0607.exe
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\bin\Debug\hukusyu0607.pdb
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.csprojResolveAssemblyReference.cache
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.Form1.resources
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.Properties.Resources.resources
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.csproj.GenerateResource.Cache
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.exe
+C:\Users\student\Documents\takashima\ゲームプログラミング\hukusyu0607\hukusyu0607\obj\Debug\hukusyu0607.pdb
