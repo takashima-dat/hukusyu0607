@@ -16,18 +16,28 @@ namespace hukusyu0607
         // ランダムのシード(種)を指定して初期化したら、
         // それを使い続ける。
         private static Random rand = new Random();
-        int vx = rand.Next(-10,11);
-        int vy = rand.Next(-10,11);
-        int vx2 = rand.Next(-10,11);
-        int vy2 = rand.Next(-10,11);
-        int vx3 = rand.Next(-10, 11);
-        int vy3 = rand.Next(-10, 11);
+        //int vx = rand.Next(-10,11);
+        //int vy = rand.Next(-10,11);
+        //int vx2 = rand.Next(-10,11);
+        //int vy2 = rand.Next(-10,11);
+        //int vx3 = rand.Next(-10, 11);
+        //int vy3 = rand.Next(-10, 11);
 
         int time = 500;
+
+        int[] velx = new int[3];
+        int[] vely = new int[3];
 
         public Form1()
         {
             InitializeComponent();
+
+            for (int i = 0; i < 3;i++ )
+            {
+                velx[i] = rand.Next(-10, 11);
+                vely[i] = rand.Next(-10, 11);
+            }
+
             label1.Left = rand.Next(0, ClientSize.Width);
             label1.Top = rand.Next(0, ClientSize.Height);
             label2.Left = rand.Next(0, ClientSize.Width);
@@ -74,30 +84,30 @@ namespace hukusyu0607
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Left += vx;
-            label1.Top += vy;
+            label1.Left += velx[0];
+            label1.Top += vely[0];
 
             if (label1.Left + label1.Width / 2 < 0)
             {
                 //Math.Abs(vx = -vx);
-                vx = Math.Abs(vx);
+                velx[0] = Math.Abs(velx[0]);
                 //vx = -vx;
             }
             if (label1.Left + label1.Width / 2 > ClientSize.Width)
             {
-                vx = -Math.Abs(vx);
+                velx[0] = -Math.Abs(velx[0]);
                 //Math.Abs (vx = -vx);
                 //vx = -vx;
             }
             if (label1.Top + label1.Height / 2 < 0)
             {
-                vy = Math.Abs(vy);
+                vely[0] = Math.Abs(vely[0]);
                 //Math.Abs(vy = -vy);
                 //vy = -vy;
             }
             if (label1.Top + label1.Height / 2 > ClientSize.Height)
             {
-                vy = -Math.Abs(vy);
+                vely[0] = -Math.Abs(vely[0]);
                 //Math.Abs(vy = -vy);
                 //vy = -vy;
             }
@@ -122,88 +132,88 @@ namespace hukusyu0607
             {
                 timer1.Enabled = false;
             }
-            
-            if (vx < 0 && vy < 0)
+
+            if (velx[0] < 0 && vely[0] < 0)
             {
                 label1.Text = ("↖");
             }
-            if (vx < 0 && vy >0)
+            if (velx[0] < 0 && vely[0] > 0)
             {
                 label1.Text = ("↙");
             }
-            if (vx > 0 && vy < 0)
+            if (velx[0] > 0 && vely[0] < 0)
             {
                 label1.Text = ("↗");
             }
-            if (vx > 0 && vy > 0)
+            if (velx[0] > 0 && vely[0] > 0)
             {
                 label1.Text = ("↘");
             }
-            if (vx == 0 && vy < 0)
+            if (velx[0] == 0 && vely[0] < 0)
             {
                 label1.Text=("↑");
             }
-            if (vx == 0 && vy > 0)
+            if (velx[0] == 0 && vely[0] > 0)
             {
                 label1.Text=("↓");
             }
-            if (vx < 0 && vy == 0)
+            if (velx[0] < 0 && vely[0] == 0)
             {
                 label1.Text=("←");
             }
-            if (vx > 0 && vy == 0)
+            if (velx[0] > 0 && vely[0] == 0)
             {
                 label1.Text=("→");
             }
 
             //以下 ラベルのあれ　コピペ
-            label2.Left += vx2;
-            label2.Top += vy2;
+            label2.Left += velx[1];
+            label2.Top += vely[1];
             if (label2.Left + label2.Width / 2 < 0)
             {
-                vx2 = Math.Abs(vx2);
+                velx[1] = Math.Abs(velx[1]);
             }
             if (label2.Left + label2.Width / 2 > ClientSize.Width)
             {
-                vx2 = -Math.Abs(vx2);
+                velx[1] = -Math.Abs(velx[1]);
             }
             if (label2.Top + label2.Height / 2 < 0)
             {
-                vy2 = Math.Abs(vy2);
+                vely[1] = Math.Abs(vely[1]);
             }
             if (label2.Top + label2.Height / 2 > ClientSize.Height)
             {
-                vy2 = -Math.Abs(vy2);
+                vely[1] = -Math.Abs(vely[1]);
             }
-            if (vx2 < 0 && vy2 < 0)
+            if (velx[1] < 0 && vely[1] < 0)
             {
                 label2.Text = ("↖");
             }
-            if (vx2 < 0 && vy2 > 0)
+            if (velx[1] < 0 && vely[1] > 0)
             {
                 label2.Text = ("↙");
             }
-            if (vx2 > 0 && vy2 < 0)
+            if (velx[1] > 0 && vely[1] < 0)
             {
                 label2.Text = ("↗");
             }
-            if (vx2 > 0 && vy2 > 0)
+            if (velx[1] > 0 && vely[1] > 0)
             {
                 label2.Text = ("↘");
             }
-            if (vx2 == 0 && vy2 < 0)
+            if (velx[1] == 0 && vely[1] < 0)
             {
                 label2.Text = ("↑");
             }
-            if (vx2 == 0 && vy2 > 0)
+            if (velx[1] == 0 && vely[1] > 0)
             {
                 label2.Text = ("↓");
             }
-            if (vx2 < 0 && vy2 == 0)
+            if (velx[1] < 0 && vely[1] == 0)
             {
                 label2.Text = ("←");
             }
-            if (vx2 > 0 && vy2 == 0)
+            if (velx[1] > 0 && vely[1] == 0)
             {
                 label2.Text = ("→");
             }
@@ -217,53 +227,53 @@ namespace hukusyu0607
             }*/
 
             //ラベル3
-            label3.Left += vx3;
-            label3.Top += vy3;
+            label3.Left += velx[2];
+            label3.Top += vely[2];
             if (label3.Left + label3.Width / 2 < 0)
             {
-                vx3 = Math.Abs(vx3);
+                velx[2] = Math.Abs(velx[2]);
             }
             if (label3.Left + label3.Width / 2 > ClientSize.Width)
             {
-                vx3 = -Math.Abs(vx3);
+                velx[2] = -Math.Abs(velx[2]);
             }
             if (label3.Top + label3.Height / 2 < 0)
             {
-                vy3 = Math.Abs(vy3);
+                vely[2] = Math.Abs(vely[2]);
             }
             if (label3.Top + label3.Height / 2 > ClientSize.Height)
             {
-                vy3 = -Math.Abs(vy3);
+                vely[2] = -Math.Abs(vely[2]);
             }
-            if (vx3 < 0 && vy3 < 0)
+            if (velx[2] < 0 && vely[2] < 0)
             {
                 label3.Text = ("↖");
             }
-            if (vx3 < 0 && vy3 > 0)
+            if (velx[2] < 0 && vely[2] > 0)
             {
                 label3.Text = ("↙");
             }
-            if (vx3 > 0 && vy3 < 0)
+            if (velx[2] > 0 && vely[2] < 0)
             {
                 label3.Text = ("↗");
             }
-            if (vx3 > 0 && vy3 > 0)
+            if (velx[2] > 0 && vely[2] > 0)
             {
                 label3.Text = ("↘");
             }
-            if (vx3 == 0 && vy3 < 0)
+            if (velx[2] == 0 && vely[2] < 0)
             {
                 label3.Text = ("↑");
             }
-            if (vx3 == 0 && vy3 > 0)
+            if (velx[2] == 0 && vely[2] > 0)
             {
                 label3.Text = ("↓");
             }
-            if (vx3 < 0 && vy3 == 0)
+            if (velx[2] < 0 && vely[2] == 0)
             {
                 label3.Text = ("←");
             }
-            if (vx3 > 0 && vy3 == 0)
+            if (velx[2] > 0 && vely[2] == 0)
             {
                 label3.Text = ("→");
             }
